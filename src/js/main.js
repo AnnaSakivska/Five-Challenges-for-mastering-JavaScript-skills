@@ -21,6 +21,7 @@ clickMeButton.addEventListener("click", ageInDays);
 function reset() {
   let flexBoxResult = document.querySelector(".flex-box-result");
   let h1 = document.querySelector(".ageInDays");
+  //   h1.removeClass('ageInDays');
   h1.parentNode.removeChild(h1);
 }
 
