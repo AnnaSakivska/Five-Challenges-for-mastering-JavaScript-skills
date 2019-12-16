@@ -19,7 +19,7 @@ let clickMeButton = document.querySelector(".click-me-button");
 clickMeButton.addEventListener("click", ageInDays);
 
 function reset() {
-  let flexBoxResult = document.querySelector(".flex-box-result");
+  // let flexBoxResult = document.querySelector(".flex-box-result");
   let h1 = document.querySelector(".ageInDays");
   //   h1.removeClass('ageInDays');
   h1.parentNode.removeChild(h1);
@@ -27,3 +27,34 @@ function reset() {
 
 let resetButton = document.querySelector(".reset-button");
 resetButton.addEventListener("click", reset);
+
+// Challege 2: Cat Generator
+
+function catGenerator() {
+  let catImg = document.createElement("img");
+  // catImg.src = "./src/img/photo-of-gray-and-white-tabby-kitten.jpg";
+  // catImg.alt = "cat image";
+  // catImg.classList.add("cat-image");
+
+  // catImg.setAttribute("src", "./src/img/photo-of-gray-and-white-tabby-kitten.jpg");
+
+  let catContainer = document.querySelector(".flex-box-container-two");
+
+  //https://stackoverflow.com/questions/12274748/setting-multiple-attributes-for-an-element-at-once-with-javascript
+  function setAttributes(el, attrs) {
+    for (let key in attrs) {
+      el.setAttribute(key, attrs[key]);
+    }
+  }
+
+  setAttributes(catImg, {
+    src: "./src/img/photo-of-gray-and-white-tabby-kitten.jpg",
+    alt: "cat image",
+    class: "cat-image"
+  });
+
+  catContainer.appendChild(catImg);
+}
+
+let catGeneratorButton = document.querySelector(".cat-generator-button");
+catGeneratorButton.addEventListener("click", catGenerator);
