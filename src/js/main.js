@@ -28,6 +28,7 @@ function reset() {
 let resetButton = document.querySelector(".reset-button");
 resetButton.addEventListener("click", reset);
 
+
 // Challenge 2: Cat Generator
 
 function catGenerator() {
@@ -59,6 +60,7 @@ function catGenerator() {
 let catGeneratorButton = document.querySelector(".cat-generator-button");
 catGeneratorButton.addEventListener("click", catGenerator);
 
+
 //Challenge 3: Rock, Paper, Scissors
 
 function rpsGame(yourChoice) {
@@ -82,6 +84,7 @@ thisImg(".scissors-image").addEventListener("click", rpsGame);
 thisImg(".rock-image").id = 'rock';
 thisImg(".paper-image").id = 'paper';
 thisImg(".scissors-image").id = 'scissors';
+
 
 
 // document.querySelector(".rock-image").addEventListener("click", rpsGame);
@@ -143,3 +146,55 @@ function rpsFrontEnd(humanImageChoice, botImageChoice, finalMessage) {
     rpsImageContainer.appendChild(messageDiv);
     rpsImageContainer.appendChild(botDiv);
 }
+
+
+//Challenge 4: Challenge 4: Change the color of all Buttons!
+
+let allButtons = document.querySelectorAll('.btn');
+let copyAllColors = [];
+
+for (let i = 0; i < allButtons.length; i++) {
+    copyAllColors.push(allButtons[i].classList[1]);
+}
+
+function buttonColorChange(buttonThingy) {
+    if (buttonThingy.target.value === 'red') {
+        colorChoiceFunction('btn-danger');
+    } else if (buttonThingy.target.value === 'blue') {
+        colorChoiceFunction('btn-primary');
+    } else if (buttonThingy.target.value === 'random') {
+        randomColorFunction();
+    } else {
+        resetColorFunction();
+    }
+
+    function colorChoiceFunction(colorClass) {
+        for (let i = 0; i < allButtons.length; i++) {
+            allButtons[i].classList.remove(allButtons[i].classList[1]);
+            allButtons[i].classList.add(colorClass);
+        }
+    }
+
+    function resetColorFunction() {
+        for (let i = 0; i < allButtons.length; i++) {
+            allButtons[i].classList.remove(allButtons[i].classList[1]);
+            allButtons[i].classList.add(copyAllColors[i]);
+        }
+    }
+
+    function randToColorInt() {
+        return Math.floor(Math.random() * 4)
+    }
+
+
+    function randomColorFunction() {
+        let randomChoices = ['btn-primary', 'btn-danger', 'btn-warning', 'btn-success'];
+        for (let i = 0; i < allButtons.length; i++) {
+            allButtons[i].classList.remove(allButtons[i].classList[1]);
+            allButtons[i].classList.add(randomChoices[randToColorInt()]);
+        }
+    }
+}
+
+let selectElement = document.querySelector('.select-background');
+selectElement.addEventListener('click', buttonColorChange);

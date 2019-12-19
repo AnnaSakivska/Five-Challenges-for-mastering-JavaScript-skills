@@ -6,7 +6,8 @@
 
 .container-first,
 .container-second,
-.container-third {
+.container-third,
+.container-fourth{
     border: 1px solid black;
     width: 75%;
     text-align: center;
@@ -15,7 +16,8 @@
 
 .flex-box-container-first,
 .flex-box-container-two,
-.rps-image-container {
+.rps-image-container,
+.buttons-container {
     border: 1px solid black;
     display: flex;
     flex-direction: row;
@@ -67,6 +69,12 @@
 
 .rps-image:hover {
     box-shadow: 0 10px 30px blue;
+}
+
+.select-background,
+.btn {
+    align-self: center;
+    margin: 10px;
 }
 
 
