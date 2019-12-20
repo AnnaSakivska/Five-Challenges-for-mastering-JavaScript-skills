@@ -86,7 +86,6 @@ thisImg(".paper-image").id = 'paper';
 thisImg(".scissors-image").id = 'scissors';
 
 
-
 // document.querySelector(".rock-image").addEventListener("click", rpsGame);
 
 
@@ -198,3 +197,29 @@ function buttonColorChange(buttonThingy) {
 
 let selectElement = document.querySelector('.select-background');
 selectElement.addEventListener('click', buttonColorChange);
+
+
+//Challenge 5: Blackjack
+let blackjackGame = {
+    'you': {
+        'scoreSpan': '.your-blackjack-result',
+        'div': '.your-box',
+        'score': 0
+    },
+    'dealer': {
+        'scoreSpan': '.dealer-blackjack-result',
+        'div': '.dealer-box',
+        'score': 0
+    }
+};
+
+const You = blackjackGame['you'],
+    Dealer = blackjackGame['dealer'];
+document.querySelector('.blackjack-hit-button').addEventListener('click', blackjackHit);
+
+function blackjackHit() {
+    let cardImage = document.createElement('img');
+    cardImage.src = 'src/images-blackjack/Q.png';
+    cardImage.style.cssText = "width: 150px";
+    document.querySelector(You['div']).appendChild(cardImage);
+}
