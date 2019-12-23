@@ -213,6 +213,22 @@ let blackjackGame = {
     scoreSpan: ".dealer-blackjack-result",
     div: ".dealer-box",
     score: 0
+  },
+  cards: ["2", "3", "4", "5", "6", "7", "8", "9", "10", "K", "J", "Q", "A"],
+  cardsMap: {
+    "2": 2,
+    "3": 3,
+    "4": 4,
+    "5": 5,
+    "6": 6,
+    "7": 7,
+    "8": 8,
+    "9": 9,
+    "10": 10,
+    K: 10,
+    J: 10,
+    Q: 10,
+    A: [1, 11]
   }
 };
 
@@ -227,16 +243,27 @@ document
   .addEventListener("click", blackjackDeal);
 
 function blackjackHit() {
-  showCard(You);
-  showCard(Dealer);
+  let card = randomCard();
+  //   console.log(card);
+  showCard(card, You);
+  //   showCard(card, Dealer);
+  playerScoreCounter(card, You);
+}
+function randomCard() {
+  return blackjackGame["cards"][Math.floor(Math.random() * 12)];
 }
 
-function showCard(activePlayer) {
+function showCard(card, activePlayer) {
   let cardImage = document.createElement("img");
-  cardImage.src = "src/images-blackjack/Q.png";
+  cardImage.src = `src/images-blackjack/${card}.png`;
+  console.log(cardImage.src);
   cardImage.classList.add("cards-images");
-  cardImage.style.cssText = "width: 20%; align-self: flex-start;";
+  cardImage.style.cssText = "width: 20%; margin: 10px; align-self: flex-start;";
   document.querySelector(activePlayer["div"]).appendChild(cardImage);
+
+  //   for (let i = 0; i < blackjackGame.cards.length; i++) {
+  // randomCard();
+  //   }
 }
 
 function blackjackDeal() {
@@ -248,8 +275,19 @@ function removeCard(activePlayer) {
   let yourOrBotImages = document
     .querySelector(activePlayer.div)
     .querySelectorAll(".cards-images");
-  console.log(yourOrBotImages);
+  //   console.log(yourOrBotImages);
   for (let i = 0; i < yourOrBotImages.length; i++) {
     yourOrBotImages[i].remove();
   }
+}
+
+function playerScoreCounter(card, activePlayer) {
+  let scoreSpanTag = document.querySelector(activePlayer.scoreSpan);
+  //   let yourOrBotImages = document
+  //     .querySelector(activePlayer.div)
+  //     .querySelectorAll(".cards-images");
+
+  activePlayer["score"] += blackjackGame.cardsMap[card];
+
+  scoreSpanTag.innerHTML = `${activePlayer["score"]}`;
 }
