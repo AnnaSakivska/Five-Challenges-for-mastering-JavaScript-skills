@@ -1,12 +1,12 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body {
-    padding-top: 50px;
-    padding-bottom: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .container-first,
@@ -14,10 +14,10 @@ body {
 .container-third,
 .container-fourth,
 .container-fifth {
-    border: 1px solid black;
-    width: 75%;
-    text-align: center;
-    margin: 0 auto;
+  border: 1px solid black;
+  width: 75%;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .flex-box-container-first,
@@ -27,117 +27,123 @@ body {
 .flex-blackjack-row-1,
 .flex-blackjack-row-2,
 .flex-blackjack-row-3 {
-    border: 1px solid black;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .flex-box-container-first > div {
-    display: flex;
-    padding: 10px;
-    margin: 10px;
-    border: 1px solid black;
-    align-items: center;
+  display: flex;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid black;
+  align-items: center;
 }
 
 .container-second {
-    border: 1px solid red;
+  border: 1px solid red;
 }
 
 .flex-box-container-two {
-    border: 1px solid blue;
+  border: 1px solid blue;
 }
 
 .cat-generator-button {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .cat-image {
-    width: 200px;
-    padding: 5px;
-    margin: 5px;
-    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.7);
+  width: 200px;
+  padding: 5px;
+  margin: 5px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.7);
 }
 
 .rps-image {
-    width: 200px;
-    margin: 10px;
+  width: 200px;
+  margin: 10px;
 }
 
 .rps-image-result {
-    width: 200px;
-    height: 175px;
-    /*margin: 10px;*/
+  width: 200px;
+  height: 175px;
+  /*margin: 10px;*/
 }
 
 .rps-image:hover {
-    box-shadow: 0 10px 30px blue;
+  box-shadow: 0 10px 30px blue;
 }
 
 .select-background,
 .btn {
-    align-self: center;
-    margin: 10px;
+  align-self: center;
+  margin: 10px;
 }
 
 .flex-blackjack-row-1,
 .flex-blackjack-row-2 {
-    background: url("./../img/blackjack-table-background.jpg") center;
-    background-size: cover;
+  background: url("./../img/blackjack-table-background.jpg") center;
+  background-size: cover;
 }
 
 .flex-blackjack-row-1 {
-    color: white;
-    height: 350px;
+  color: white;
+  min-height: 350px;
 }
 
 .your-box,
 .dealer-box {
-    border: 1px solid black;
-    width: 50%;
-    padding: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: center;
+  border: 1px solid black;
+  width: 50%;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .your-blackjack-title,
 .dealer-blackjack-title {
-    margin: 0 auto;
-    align-self: start;
+  width: 100%;
+  /* margin: 0 auto; */
+  align-self: start;
 }
 
 .blackjack-buttons-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
 }
 
 .blackjack-buttons-container button,
 .blackjack-buttons-container {
-    border: 1px solid black;
-    /*padding: 3px;*/
+  border: 1px solid black;
+  /*padding: 3px;*/
 }
 .flex-blackjack-row-1 {
-    padding: 10px;
+  padding: 10px;
 }
 
 .flex-blackjack-row-2 {
-    padding: 10px;
+  padding: 10px;
 }
 
 .flex-blackjack-row-3 table,
 .flex-blackjack-row-3 table th,
 .flex-blackjack-row-3 table td {
-    border: 1px solid black;
-    padding: 4px;
+  border: 1px solid black;
+  padding: 4px;
 }
 
 .flex-blackjack-row-3 table {
-    margin: 10px;
+  margin: 10px;
 }
+
+/* .cards-images {
+  width: 15%;
+  align-self: end;
+} */
