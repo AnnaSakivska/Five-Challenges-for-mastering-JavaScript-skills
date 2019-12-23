@@ -28,6 +28,7 @@ function reset() {
 let resetButton = document.querySelector(".reset-button");
 resetButton.addEventListener("click", reset);
 
+
 // Challenge 2: Cat Generator
 
 function catGenerator() {
@@ -58,6 +59,7 @@ function catGenerator() {
 
 let catGeneratorButton = document.querySelector(".cat-generator-button");
 catGeneratorButton.addEventListener("click", catGenerator);
+
 
 //Challenge 3: Rock, Paper, Scissors
 
@@ -142,4 +144,82 @@ function rpsFrontEnd(humanImageChoice, botImageChoice, finalMessage) {
     rpsImageContainer.appendChild(humanDiv);
     rpsImageContainer.appendChild(messageDiv);
     rpsImageContainer.appendChild(botDiv);
+}
+
+
+//Challenge 4: Challenge 4: Change the color of all Buttons!
+
+let allButtons = document.querySelectorAll('.btn');
+let copyAllColors = [];
+
+for (let i = 0; i < allButtons.length; i++) {
+    copyAllColors.push(allButtons[i].classList[1]);
+}
+
+function buttonColorChange(buttonThingy) {
+    if (buttonThingy.target.value === 'red') {
+        colorChoiceFunction('btn-danger');
+    } else if (buttonThingy.target.value === 'blue') {
+        colorChoiceFunction('btn-primary');
+    } else if (buttonThingy.target.value === 'random') {
+        randomColorFunction();
+    } else {
+        resetColorFunction();
+    }
+
+    function colorChoiceFunction(colorClass) {
+        for (let i = 0; i < allButtons.length; i++) {
+            allButtons[i].classList.remove(allButtons[i].classList[1]);
+            allButtons[i].classList.add(colorClass);
+        }
+    }
+
+    function resetColorFunction() {
+        for (let i = 0; i < allButtons.length; i++) {
+            allButtons[i].classList.remove(allButtons[i].classList[1]);
+            allButtons[i].classList.add(copyAllColors[i]);
+        }
+    }
+
+    function randToColorInt() {
+        return Math.floor(Math.random() * 4)
+    }
+
+
+    function randomColorFunction() {
+        let randomChoices = ['btn-primary', 'btn-danger', 'btn-warning', 'btn-success'];
+        for (let i = 0; i < allButtons.length; i++) {
+            allButtons[i].classList.remove(allButtons[i].classList[1]);
+            allButtons[i].classList.add(randomChoices[randToColorInt()]);
+        }
+    }
+}
+
+let selectElement = document.querySelector('.select-background');
+selectElement.addEventListener('click', buttonColorChange);
+
+
+//Challenge 5: Blackjack
+let blackjackGame = {
+    'you': {
+        'scoreSpan': '.your-blackjack-result',
+        'div': '.your-box',
+        'score': 0
+    },
+    'dealer': {
+        'scoreSpan': '.dealer-blackjack-result',
+        'div': '.dealer-box',
+        'score': 0
+    }
+};
+
+const You = blackjackGame['you'],
+    Dealer = blackjackGame['dealer'];
+document.querySelector('.blackjack-hit-button').addEventListener('click', blackjackHit);
+
+function blackjackHit() {
+    let cardImage = document.createElement('img');
+    cardImage.src = 'src/images-blackjack/Q.png';
+    cardImage.style.cssText = "width: 150px";
+    document.querySelector(You['div']).appendChild(cardImage);
 }
