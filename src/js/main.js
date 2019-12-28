@@ -278,7 +278,6 @@ function showCard(card, activePlayer) {
 
 function blackjackDeal() {
   removeResult();
-  computerWinner();
   removeCard(You);
   removeCard(Dealer);
 }
@@ -334,8 +333,8 @@ function dealerLogic() {
 
 function computerWinner() {
   let winner;
-  //condition: higher score than dealer or when dealer busts but you're not
-  if (You["score"] <= 21 && Dealer["score"]) {
+  if (You["score"] <= 21) {
+    //condition: higher score than dealer or when dealer busts but you're not
     if (You["score"] > Dealer["score"] || Dealer["score"] > 21) {
       blackjackGame["wins"]++;
       winner = You;
@@ -345,19 +344,18 @@ function computerWinner() {
     } else if (You["score"] === Dealer["score"]) {
       blackjackGame["draws"]++;
     }
-  }
-
-  //condition: when user bust but dealer doesn't
-  else if (You["score"] > 21 && Dealer["score"] <= 21) {
+  } else if (You["score"] > 21 && Dealer["score"] <= 21) {
+    //condition: when user bust but dealer doesn't
     blackjackGame["losses"]++;
     winner = Dealer;
-  }
-
-  //condition: when you AND the dealer busts
-  else if (You["score"] > 21 && Dealer["score"] > 21) {
+  } else if (You["score"] > 21 && Dealer["score"] > 21) {
+    //condition: when you AND the dealer busts
     blackjackGame["draws"]++;
   }
   console.log("Winner is", winner);
+  console.log(blackjackGame["wins"], "your wins");
+  console.log(blackjackGame["losses"], "your losses");
+  console.log(blackjackGame["draws"], "your draws");
   return winner;
 }
 
@@ -365,14 +363,17 @@ function showResult(winner) {
   let message, messageColor;
 
   if (winner === You) {
+    document.querySelector(".wins").textContent = blackjackGame["wins"];
     message = "You won!";
     messageColor = "green";
     winSound.play();
   } else if (winner === Dealer) {
+    document.querySelector(".losses").textContent = blackjackGame["losses"];
     message = "You lost!";
     messageColor = "red";
     lossSound.play();
   } else {
+    document.querySelector(".draws").textContent = blackjackGame["draws"];
     message = "You drew!";
     messageColor = "black";
   }
