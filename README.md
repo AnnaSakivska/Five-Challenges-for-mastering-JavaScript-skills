@@ -1,5 +1,3 @@
-# JavaScript-Tutorial-for-Beginners---Full-Course-in-8-Hours-2020-
-
 
 # Five Challenges for mastering JavaScript skills 
 
@@ -7,7 +5,7 @@
 
 ### Description
 
-The challenges were completed using like a guide a ###['JavaScript Tutorial for Beginners - Full Course in 8 Hours 2020'](https://www.youtube.com/watch?v=Qqx_wzMmFeA) created by ###Clever Programmer chanel
+The challenges were completed using like a guide a ['JavaScript Tutorial for Beginners - Full Course in 8 Hours 2020'](https://www.youtube.com/watch?v=Qqx_wzMmFeA) created by Clever Programmer channel
 
 
 ### Technologies are used
