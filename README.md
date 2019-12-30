@@ -1,7 +1,7 @@
 
 # Five Challenges for mastering JavaScript skills 
 
-#### [Demo of the challenges](https://annasakivska.github.io/Five-Challenges-for-mastering-JavaScript-skills-/index.html)
+#### [Demo of the challenges](https://annasakivska.github.io/Five-Challenges-for-mastering-JavaScript-skills/index.html)
 
 ### Description
 
